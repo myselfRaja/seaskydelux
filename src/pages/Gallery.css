@@ -1,0 +1,23 @@
+.gallery-section {
+  background-color: #f8f9fa;
+}
+
+.gallery-img-container {
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;  /* image ko crop karke fit karega */
+  border-radius: 8px; /* thoda round corner ke liye */
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* hover par thoda zoom effect */
+}
+
