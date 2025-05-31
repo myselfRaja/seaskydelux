@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -6,14 +7,20 @@ const Gallery = () => {
 
   const imageList = Object.values(images).map((img, index) => (
     <div className="col-6 col-md-4 col-lg-3" key={index}>
-      <div className="gallery-img-container">
+      <motion.div
+        className="gallery-img-container"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.05 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <img
           src={img.default}
           alt={`Gallery ${index + 1}`}
           loading="lazy"
-          className="img-fluid rounded shadow-sm gallery-img"
+          className="gallery-image"
         />
-      </div>
+      </motion.div>
     </div>
   ));
 
